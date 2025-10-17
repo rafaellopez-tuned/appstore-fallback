@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Apple Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=1545547277">
+
+  <title>Open in Plern App</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005ac1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Open Retention Content</h1>
+  <p>This will attempt to open the Plern app, and fallback to the App Store if not installed.</p>
+  <button onclick="openApp()">Open in App</button>
+
+  <script>
+    function openApp() {
+      const universalLink = "https://rafaellopez-tuned.github.io/appstore-fallback/contents/Retention_sep_2025_inapp_paradox";
+      const appStoreLink = "https://apps.apple.com/app/id1545547277";
+
+      const now = Date.now();
+      window.location.href = universalLink;
+
+      setTimeout(() => {
+        if (Date.now() - now < 2000) {
+          window.location.href = appStoreLink;
+        }
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
